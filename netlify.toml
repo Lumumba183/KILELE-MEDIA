@@ -1,5 +1,5 @@
 [build]
-  command = "mkdir -p dist && cp -r *.html assets a c robots.txt sitemap.xml dist/"
+  command = "mkdir -p dist && cp -r *.html assets a c robots.txt sitemap.xml _redirects dist/"
   publish = "dist"
 
 # Proxy legacy article audio clips to the old WordPress server.

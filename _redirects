@@ -1,0 +1,3 @@
+# Scoped proxy ONLY for legacy article audio clips (no catch-all rule —
+# real pages are real files and are never intercepted by this).
+/wp-content/uploads/*  https://www.kilelemediaproduction.co.ke/wp-content/uploads/:splat  200!
