@@ -1,3 +1,11 @@
 [build]
   command = "mkdir -p dist && cp -r *.html assets a c robots.txt sitemap.xml dist/"
   publish = "dist"
+
+# Proxy legacy article audio clips to the old WordPress server.
+# Scoped to /wp-content/uploads/* only — no local files exist at this path,
+# so real pages are never intercepted (no SPA-style catch-all).
+[[redirects]]
+  from = "/wp-content/uploads/*"
+  to = "https://www.kilelemediaproduction.co.ke/wp-content/uploads/:splat"
+  status = 200
