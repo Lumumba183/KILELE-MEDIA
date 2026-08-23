@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Newsroom Workspace | Kilele Radio</title>
+<meta name="description" content="Kilele Radio staff workspace — articles, ticker, podcasts, ads and shift-based access.">
+<meta property="og:title" content="Newsroom Workspace">
+<meta property="og:description" content="Kilele Radio staff workspace — articles, ticker, podcasts, ads and shift-based access.">
+<meta property="og:image" content="https://www.kilelemediaproduction.co.ke/assets/img/logo.jpg">
+<meta property="og:site_name" content="Kilele Radio">
+<link rel="icon" href="/assets/img/logo.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/style.css">
+
+</head><body data-admin="1"><div class="topbar"><div class="wrap">
+  <span><span class="live-dot"></span><span id="tb-date"></span></span>
+  <span class="tb-right">
+    <a href="https://www.facebook.com/kilelemediaproductions" target="_blank" rel="noopener">Facebook</a>
+    <a href="https://www.youtube.com/@KileleRadio" target="_blank" rel="noopener">YouTube</a>
+    <a href="/advertise.html">Advertise</a>
+    <a href="/login.html" class="keep"><b>Staff Login</b></a>
+  </span></div></div>
+<header class="site-header"><div class="wrap">
+  <a href="/index.html" class="brand"><img src="/assets/img/logo.jpg" alt="Kilele Radio logo">
+    <span class="bt"><b>KILELE <span>RADIO</span></b><small>Kilele cha Maendeleo</small></span></a>
+  <nav class="main-nav" id="mainnav"><a href="/index.html" class="">Home</a><a href="/news.html" class="">News</a><a href="/podcasts.html" class="">On-Demand</a><a href="/programmes.html" class="">Programmes</a><a href="/presenters.html" class="">Presenters</a><a href="/about.html" class="">About</a><a href="/contact.html" class="">Contact</a></nav>
+  <div class="hdr-actions">
+    <input class="hdr-search" id="hdr-search" type="search" placeholder="Search stories…">
+    <button class="listen-btn js-play"><span class="js-play-icon">▶</span> LISTEN LIVE</button>
+    <button class="burger" id="burger" aria-label="Menu">☰</button>
+  </div>
+</div></header>
+<div class="ticker-strip"><div class="ticker-label">Breaking</div>
+  <div class="ticker-view"><div class="ticker-track" id="ticker-track"></div></div></div>
+<div class="demo-banner">⚡ <span><b>Demo workspace</b> — open access for the client preview. Clerk authentication activates at Stage 3, after contract signing. Changes you make here are stored in this browser only.</span></div>
+<div class="admin-shell" id="admin-app">
+  <aside class="admin-side">
+    <div class="as-user"><b id="as-name">—</b><small id="as-role">—</small></div>
+    <nav id="admin-nav"></nav>
+  </aside>
+  <main class="admin-main">
+
+    <section class="admin-sec" id="sec-overview">
+      <h2>Overview</h2><p class="admin-sub">The newsroom at a glance.</p>
+      <div class="stat-grid">
+        <div class="stat-box"><div class="n" id="st-articles">—</div><div class="l">Published stories</div></div>
+        <div class="stat-box"><div class="n" id="st-drafts">—</div><div class="l">Studio drafts</div></div>
+        <div class="stat-box"><div class="n" id="st-users">—</div><div class="l">Staff accounts</div></div>
+        <div class="stat-box"><div class="n" id="st-ads">—</div><div class="l">Ad zones booked</div></div>
+      </div>
+      <div class="panel" style="margin-top:22px"><h3>Your access</h3>
+        <p style="font-size:14px;color:var(--muted)">Your window and permitted sections are set under <b>Shifts &amp; Access</b> by the Super Admin. If station time moves past your window, this workspace signs you out automatically.</p></div>
+    </section>
+
+    <section class="admin-sec" id="sec-studio" style="display:none">
+      <h2>Article Studio</h2><p class="admin-sub">Create and publish stories — headline, desk, featured image and body.</p>
+      <div class="panel">
+        <div class="form-grid">
+          <div><label class="fl">Headline</label><input id="f-title" placeholder="Story headline…"></div>
+          <div><label class="fl">Desk</label><select id="f-cat">
+            <option>Local News</option><option>Politics</option><option>Sports</option><option>Business</option>
+            <option>World</option><option>Health</option><option>Education</option><option>Environment &amp; Climate</option>
+            <option>Security</option><option>GBV</option><option>Agriculture</option><option>Transport</option></select></div>
+          <div><label class="fl">Featured image</label><input id="f-image" type="file" accept="image/*"><img class="img-preview" id="img-preview" alt=""></div>
+          <div><label class="fl">Story body</label><textarea id="f-body" rows="9" placeholder="Write the story…"></textarea></div>
+          <div><button class="btn" id="btn-publish">Publish Story</button> &nbsp; <button class="btn indigo" id="btn-draft">Save Draft</button></div>
+        </div>
+      </div>
+      <div class="panel"><h3>Your stories (this browser)</h3>
+        <table class="atable"><thead><tr><th>Headline</th><th>Desk</th><th>Status</th><th>When</th><th></th></tr></thead>
+        <tbody id="draft-list"></tbody></table></div>
+    </section>
+
+    <section class="admin-sec" id="sec-ticker" style="display:none">
+      <h2>Breaking Ticker</h2><p class="admin-sub">What scrolls across the top of the homepage right now.</p>
+      <div class="panel"><div class="form-grid">
+        <div><label class="fl">Breaking headline</label><input id="t-text" placeholder="e.g. Governor addresses county assembly…"></div>
+        <div><label class="fl">Auto-expire after</label><select id="t-expiry"><option value="0">No expiry</option><option value="1">1 hour</option><option value="3">3 hours</option><option value="12">12 hours</option><option value="24">24 hours</option></select></div>
+        <div><button class="btn" id="btn-ticker">Push to Homepage Ticker</button></div>
+      </div></div>
+      <div class="panel"><h3>Live ticker items</h3>
+        <table class="atable"><thead><tr><th>Headline</th><th>Expires</th><th></th></tr></thead><tbody id="ticker-list"></tbody></table></div>
+    </section>
+
+    <section class="admin-sec" id="sec-podcasts" style="display:none">
+      <h2>Podcasts</h2><p class="admin-sub">Upload episodes of Mwanga wa Kilele and other shows.</p>
+      <div class="panel"><div class="form-grid">
+        <div><label class="fl">Episode title</label><input placeholder="e.g. Mwanga wa Kilele — Habari na Matukio (Mchana)"></div>
+        <div><label class="fl">Audio file (MP3)</label><input type="file" accept="audio/*"></div>
+        <div><label class="fl">Show notes</label><textarea rows="4" placeholder="What this episode covers…"></textarea></div>
+        <div><button class="btn" onclick="alert('Episode saved (demo). In the live backend this uploads to secure storage and appears on the On-Demand page.')">Publish Episode</button></div>
+      </div></div>
+    </section>
+
+    <section class="admin-sec" id="sec-programmes" style="display:none">
+      <h2>Programmes</h2><p class="admin-sub">The weekly grid shown on the Programmes page.</p>
+      <div class="panel"><p style="font-size:14px;color:var(--muted)">In the live backend this grid is fully editable — add shows, move slots, assign presenters, and the public schedule plus the “On Air Now” banner update instantly. (Demo shows the current schedule on the <a href="/programmes.html">Programmes page</a>.)</p></div>
+    </section>
+
+    <section class="admin-sec" id="sec-ads" style="display:none">
+      <h2>Ad Manager</h2><p class="admin-sub">Book advertisers into the site’s revenue zones.</p>
+      <div class="panel"><table class="atable">
+        <thead><tr><th>Zone</th><th>Advertiser</th><th>Runs until</th></tr></thead>
+        <tbody id="ads-list"></tbody></table>
+        <p style="font-size:12.5px;color:var(--muted);margin-top:10px">Type an advertiser name to book a zone; clear it back to “— available —” to free it. Edits save automatically (demo).</p></div>
+    </section>
+
+    <section class="admin-sec" id="sec-access" style="display:none">
+      <h2>Shifts &amp; Access</h2><p class="admin-sub">Super Admin control: allocate each staff member’s login window and permitted sections.</p>
+      <div class="panel"><table class="atable">
+        <thead><tr><th>Staff member</th><th>Login window (EAT)</th><th>Live status</th><th>Allowed sections</th></tr></thead>
+        <tbody id="users-list"></tbody></table>
+        <p style="font-size:12.5px;color:var(--muted);margin-top:10px">Change a window and the effect is immediate: outside the window, that profile cannot open the workspace — try it from the login page. (Demo stores changes in this browser.)</p></div>
+      <button class="small-btn red" id="btn-reset">Reset all demo data</button>
+    </section>
+
+    <section class="admin-sec" id="sec-denied" style="display:none">
+      <div class="locked"><div style="font-size:44px">🔒</div><h2>Section not permitted</h2>
+      <p style="color:var(--muted)">Your profile does not include this section. Ask the Super Admin to grant it under Shifts &amp; Access.</p></div>
+    </section>
+
+  </main>
+</div><footer class="footer"><div class="wrap">
+  <div class="cols">
+    <div>
+      <div class="brandline"><img src="/assets/img/logo.jpg" alt=""><b style="font-size:18px">KILELE <span style="color:#ff8291">RADIO</span></b></div>
+      <p>Kilele cha Maendeleo — the voice of the Coast and beyond. News, talk and music in English and Kiswahili, streaming live 24/7.</p>
+      <p style="margin-top:12px"><a href="https://www.facebook.com/kilelemediaproductions" target="_blank" rel="noopener" style="display:inline;margin-right:14px">Facebook</a>
+      <a href="https://www.youtube.com/@KileleRadio" target="_blank" rel="noopener" style="display:inline">YouTube</a></p>
+    </div>
+    <div><h4>Sections</h4>
+      <a href="/news.html">All News</a><a href="/podcasts.html">On-Demand / Podcasts</a>
+      <a href="/programmes.html">Programmes</a><a href="/presenters.html">Presenters</a>
+      <a href="/advertise.html">Advertise With Us</a></div>
+    <div><h4>News Desks</h4><a href="/c/local-news.html">Local News</a><a href="/c/politics.html">Politics</a><a href="/c/sports.html">Sports</a><a href="/c/business.html">Business</a><a href="/c/world.html">World</a><a href="/c/health.html">Health</a></div>
+    <div><h4>Contact</h4>
+      <p>Kilele Media Production<br>Kenya — Coast Region</p>
+      <p style="margin-top:8px">Editorial: <a href="mailto:Teryani@kilelemediaproduction.co.ke" style="display:inline">Teryani@kilelemediaproduction.co.ke</a></p>
+      <p style="margin-top:8px"><a href="/contact.html" style="display:inline">Contact form →</a></p></div>
+  </div>
+  <div class="bottom">
+    <span>© 2026 Kilele Media Production. All rights reserved. &nbsp;·&nbsp; <a href="/privacy.html" style="display:inline">Privacy</a> &nbsp;·&nbsp; <a href="/terms.html" style="display:inline">Terms</a></span>
+    <span>Digital platform by <a href="https://www.nexaflow-digital.com" target="_blank" rel="noopener" style="display:inline;color:#fff"><b>NexaFlow Digital</b></a></span>
+  </div>
+</div></footer>
+<div class="player-bar"><div class="wrap">
+  <button class="pb-play js-play" aria-label="Play live stream"><span class="js-play-icon">▶</span></button>
+  <div class="pb-info"><b>Kilele Radio — Live</b><small class="js-onair-name">Non-stop Music Mix</small><br>
+    <small id="pb-status">Tap play to start the live stream</small></div>
+  <span class="pb-live"><span class="live-dot" style="background:#ff5b74"></span>LIVE 24/7</span>
+  <input class="pb-vol" id="pb-vol" type="range" min="0" max="1" step="0.05" value="0.9">
+</div></div><script src="/assets/js/data.js"></script>
+<script src="/assets/js/main.js"></script>
+<script src="/assets/js/admin.js"></script></body>
+</html>
